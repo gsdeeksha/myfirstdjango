@@ -1,0 +1,9 @@
+{% extends 'base/layout.html' %}
+{% block body %}
+<form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+    <br />
+    <center><button class="btn btn-primary" type="submit"><span class = "glyphicon glyphicon-save"></span> REGISTER</button></center>
+</form>
+{% endblock %}
