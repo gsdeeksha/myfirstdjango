@@ -15,8 +15,9 @@
 
 from django.contrib import admin
 from django.urls import path
-from home.views import form_view, booksearch, deletebook, editbook
-from home.views import home_view, design, register, form, carousel,html_form
+from home1.views import form_view, booksearch, deletebook, editbook
+from home1.views import home_view, design, register, form, carousel,html_form
+
 
 urlpatterns = [
     path('',booksearch),
@@ -24,12 +25,10 @@ urlpatterns = [
     path('editbook/<id>',editbook),
     path('home/',home_view),
     path('myproject/',design),
-    #path('register/',register),
 
     path('form/',form),
     path('carousel/',carousel),
     path('forms/',form_view,name='forms'),
-   # path('home/',form_view,name='home'),
     path('contact/',form_view,name='contact'),
     path('html/',html_form),
     path('admin/',admin.site.urls),

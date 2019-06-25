@@ -49,7 +49,7 @@ import uuid
 # Create your models here.
 
 class Book(models.Model):
-    id = models.UUIDField('Book Id',primary_key=True, default = uuid.uuid4, help_text="generated unique id for book")
+    # id = models.UUIDField('Book Id',primary_key=True, default = uuid.uuid4, help_text="generated unique id for book")
     name = models.CharField(max_length=100, help_text='Book Name',null=True)
     purchase_date = models.DateField(null=True, blank=True)
     genre = models.ManyToManyField('Genre', help_text='genre of book')

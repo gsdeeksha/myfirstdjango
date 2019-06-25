@@ -1,5 +1,5 @@
 from django import forms
-from home.models import Book,Author,Genre
+from .models import Book,Author,Genre
 
 class CustomForms(forms.Form):
     username = forms.CharField(

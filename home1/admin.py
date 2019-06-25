@@ -1,8 +1,5 @@
 from django.contrib import admin
-from home.models import Book
-from home.models import Author
-from home.models import Genre
-from home.models import Customer
+from home1.models import Book,Author,Genre, Customer
 
 # Register your models here.
 #admin.site.register(Book)
