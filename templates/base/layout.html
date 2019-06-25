@@ -11,7 +11,7 @@
         <a href="/carousel">Home1</a> 
         {% if messages %}
         {% for message in messages %}
-
+        <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
         <div class="alert {% if message.tags %} alert-{{messge.tags}}{% endif %}" role="alert">
             {{ message }}
         </div>
