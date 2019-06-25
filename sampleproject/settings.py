@@ -25,7 +25,7 @@ SECRET_KEY = '#*8+xz3hg94t_kkvr)2k2pzpn7_*de=o=c!*^m9@tyk(x4!=*k'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['pure-meadow-87224.herokuapp.com','127.0.0.1']
 
 
 # Application definition
@@ -75,23 +75,27 @@ WSGI_APPLICATION = 'sampleproject.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-#     }
-# }
-
 DATABASES = {
-    'default':{
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'stu_details',
-        'USER': 'root',
-        'PASSWORD': 'manjulamc@29',
-        'HOST':'127.0.0.1',
-        'PORT':'3306',
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
+import dj_database_url
+db_from_env = dj_database_url.config()
+DATABASES['default'].update(db_from_env)
+DATABASES['default']['CONN_MAX_AGE']= 500
+
+# DATABASES = {
+#     'default':{
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'stu_details',
+#         'USER': 'root',
+#         'PASSWORD': 'manjulamc@29',
+#         'HOST':'127.0.0.1',
+#         'PORT':'3306',
+#     }
+# }
 # DATABASES = {
 #     'default':{
 #         'ENGINE': 'django.db.backends.postgresql_psycopg2',
@@ -144,3 +148,5 @@ STATICFILES_DIRS = (
     os.path.join(BASE_DIR,'static'),
 )
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+#STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'

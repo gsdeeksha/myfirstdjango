@@ -13,28 +13,28 @@
 #  #   1. Import the include() function: from django.urls import include, path
 #   #  2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 
-# from django.contrib import admin
-# from django.urls import path
-# from home.views import form_view, booksearch, deletebook, editbook
-# from home.views import home_view, design, register, form, carousel,html_form
+from django.contrib import admin
+from django.urls import path
+from home.views import form_view, booksearch, deletebook, editbook
+from home.views import home_view, design, register, form, carousel,html_form
 
-# urlpatterns = [
-#     path('',booksearch),
-#     path('deletebook/<id>',deletebook),
-#     path('editbook/<id>',editbook),
-#     path('',home_view),
-#     path('myproject/',design),
-#     path('register/',register),
+urlpatterns = [
+    path('',booksearch),
+    path('deletebook/<id>',deletebook),
+    path('editbook/<id>',editbook),
+    path('home/',home_view),
+    path('myproject/',design),
+    #path('register/',register),
 
-#     path('form/',form),
-#     path('carousel/',carousel),
-#     path('forms/',form_view,name='forms'),
-#     path('home/',form_view,name='home'),
-#     path('contact/',form_view,name='contact'),
-#     path('html/',html_form),
-#     path('admin/',admin.site.urls),
-#
-# 
+    path('form/',form),
+    path('carousel/',carousel),
+    path('forms/',form_view,name='forms'),
+   # path('home/',form_view,name='home'),
+    path('contact/',form_view,name='contact'),
+    path('html/',html_form),
+    path('admin/',admin.site.urls),
+
+]
 # *************************************************** ]
 # from django.conf.urls import include, url
 # from django.contrib import admin
@@ -42,7 +42,7 @@
 # from . import views
 # #from home.views import home_view, base, registered
  
-# #'app_name' = 'registration'
+#'app_name' = 'registration'
 
 # urlpatterns = [
 #     path('', views.reg_redirect, name='reg_redirect'),
@@ -50,11 +50,11 @@
 #     path('base/registered', views.registered, name='registered')
 # ]
 
- from django.contrib import admin
- from django.urls import path
- from home.views import form_view, registered,index
-urlpatterns = [
-     path('', views.re_redirect,name='reg_redirect'),
-     path('admin/', admin.site.urls),
-     path('registered/',form_view,name='registered'),
- ]
+#  from django.contrib import admin
+#  from django.urls import path
+#  from home.views import form_view, registered,index
+# urlpatterns = [
+#      path('', views.re_redirect,name='reg_redirect'),
+#      path('admin/', admin.site.urls),
+#      path('registered/',form_view,name='registered'),
+#  ]
